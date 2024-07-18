@@ -15,6 +15,9 @@
 **Intro**
   
 This project is made so all the elements are displayed correctly on popular screen sizes. This was my first project starting from scratch and also my first time that i am working with figma so it was fun and challenging.
+
+* [link to github ](https://github.com/talchekol/se_project_aroundtheus) 
+
   
 **Figma**  
   
