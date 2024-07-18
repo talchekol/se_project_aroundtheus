@@ -1,0 +1,14 @@
+.footer__signture {
+  margin: 0;
+  padding: 0;
+  max-width: 318px;
+  width: 100%;
+  color: #545454;
+  flex-direction: column;
+  justify-content: left;
+  padding-top: 67px;
+  font-family: Inter, "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21px;
+}
