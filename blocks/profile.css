@@ -37,8 +37,13 @@
   height: 24px;
   width: 24px;
   grid-area: button;
-  border: 1px;
+  border: 1px solid #fff;
   margin-top: 18px;
+}
+
+.profile__edit-button:hover {
+  opacity: 0.3;
+  cursor: pointer;
 }
 
 .profile__description {
@@ -54,4 +59,10 @@
   height: 50px;
   width: 150px;
   margin-left: auto;
+  border: 2px solid #fff;
+}
+
+.profile__add-button:hover {
+  opacity: 0.3;
+  cursor: pointer;
 }

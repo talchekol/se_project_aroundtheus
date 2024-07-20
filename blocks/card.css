@@ -1,25 +1,15 @@
-.cards {
-  margin-top: 51px;
-}
-
 .card__image {
   height: 282px;
   width: 282px;
-}
-
-.card__list {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: repeat(auto-fit, 282px);
-  grid-gap: 20px 17px;
-  padding: 0;
-  margin: 0;
+  object-fit: cover;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   list-style: none;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
 .card__description {
@@ -32,56 +22,27 @@
   padding-right: 20px;
   align-items: center;
   justify-content: space-between;
-  border-radius: 0 0 10px 10px;
-  font-family: Inter, "Arial", sans-serif;
-  font-weight: 900;
-  font-size: 19px;
-  line-height: 29px;
-  white-space: nowrap;
-  overflow: hidden;
 }
 
 .card__like-button {
   background: transparent url(../images/Vector.svg) center no-repeat;
   height: 18px;
   width: 21px;
+  border: none;
 }
 
-.card__title-yosemite {
-  height: 29px;
-  max-width: 193px;
+.card__like-button:hover {
+  opacity: 0.3;
+  cursor: pointer;
+}
+
+.card__title {
   margin: 0;
-}
-
-.card__title-lake {
-  height: 29px;
-  max-width: 142px;
-  margin: 0;
-}
-
-.card__title-bald {
-  height: 29px;
-  max-width: 187px;
-  margin: 0;
-}
-
-.card__title-latemar {
-  height: 29px;
-  max-width: 100px;
-  margin: 0;
-}
-
-.card__title-vanoise {
-  height: 29px;
-  max-width: 219px;
+  font-family: Inter, "Arial", sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  margin: 0;
-}
-
-.card__title-lago {
-  height: 29px;
-  max-width: 167px;
-  margin: 0;
 }
