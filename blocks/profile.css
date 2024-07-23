@@ -23,6 +23,7 @@
 
 .profile__title {
   max-width: 373px;
+  text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   font-weight: 500;
@@ -52,6 +53,10 @@
   line-height: 22px;
   grid-area: description;
   margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 282px;
 }
 
 .profile__add-button {
@@ -84,9 +89,23 @@
     padding-bottom: 36px;
   }
 
+  .profile__title {
+    font-family: Inter, "Arial", sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 26px;
+    text-align: center;
+  }
+
+  .profile__edit-button {
+    margin: 0;
+    margin-left: 10px;
+  }
+
   .profile__description {
     width: 100%;
     text-align: center;
+    margin-top: 14px;
   }
 
   .profile__add-button {

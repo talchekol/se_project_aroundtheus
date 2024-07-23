@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: left;
   padding-top: 67px;
+  padding-bottom: 60px;
   font-family: Inter, "Arial", sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -17,5 +18,8 @@
   .footer__signture {
     flex-direction: column;
     margin-top: 48px;
+    margin-left: 19px;
+    margin: 48px 19px 36px 19px;
+    padding: 0;
   }
 }
