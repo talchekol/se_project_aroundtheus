@@ -18,6 +18,8 @@ This project is made so all the elements are displayed correctly on popular scre
 
 * [link to github ](https://github.com/talchekol/se_project_aroundtheus) 
 
+* [link] (https://tripleten.com/trainer/web/lesson/07e0bdf0-d597-4a8f-8dda-eada84722122/?from=program)
+
   
 **Figma**  
   

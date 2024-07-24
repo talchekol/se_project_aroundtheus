@@ -4,7 +4,7 @@
   padding-top: 40px;
 }
 
-.proflie__info {
+.profile__info {
   display: grid;
   grid-template-areas:
     "title button"
@@ -75,7 +75,7 @@
 @media screen and (max-width: 320px) {
   .profile {
     flex-direction: column;
-    padding: 42px 19px 36px 19px;
+    padding: 42px 19px 0px 19px;
   }
 
   .profile__info {
@@ -100,12 +100,18 @@
   .profile__edit-button {
     margin: 0;
     margin-left: 10px;
+    height: 18px;
+    width: 18px;
   }
 
   .profile__description {
     width: 100%;
     text-align: center;
     margin-top: 14px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.94px;
+    text-align: center;
   }
 
   .profile__add-button {
