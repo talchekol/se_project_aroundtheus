@@ -118,10 +118,10 @@
 
   .profile__add-button {
     margin: 0;
-    width: 100%;
+    max-width: 282px;
+    width: 87%;
   }
 }
-
 @media screen and (max-width: 720px) {
   .profile {
     display: flex;
@@ -129,6 +129,6 @@
   }
   .profile__add-button {
     margin: 0;
-    width: 100%;
+    width: 85%;
   }
 }
