@@ -4,10 +4,6 @@
   font-family: Inter, "Arial", sans-serif;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
 .page__section {
   max-width: 880px;
   width: 100%;
