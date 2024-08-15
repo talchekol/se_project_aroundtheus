@@ -15,13 +15,8 @@
 
 @media screen and (max-width: 320px) {
   .footer__signture {
-    margin-top: 48px;
-    margin-left: 19px;
     margin: 48px 19px 36px 19px;
-    padding: 0;
-    font-family: Inter;
     font-size: 14px;
-    font-weight: 400;
     line-height: 16.94px;
     text-align: left;
   }
