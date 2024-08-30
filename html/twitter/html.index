@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>my twitter log in</title>
+  </head>
+
+   <body>
+    <form>
+    <img src="images/twitter.img" alt="bird image"/>
+    <h1> כניסה לטוויטר</h1>
+    <a href="906aee0247356150cd13077d431f3&origin=https%3A%2F%2Ftwitter.com">כניסה באמצעות google</a>
+    <a href="https://appleid.apple.com/auth/authorize?client_id=com.twitter.twitter.siwa&redirect_uri=https%3A%2F%2Ftwitter.com&response_type=code%20id_token&state=ysBrD1agtKRox0KhRYmYgqEcOyTAf9TibAiixzktR_t&scope=name%20email&response_mode=web_message&frame_id=a7a466ad-6ea6-41a4-a723-f2c93b8263df&m=11&v=1.5.4">כניסה באמצעןת apple</a>
+    <h2> או</h2>
+    <label>
+        טלפון,כתובת דואר וכו'
+        <input type="text"/>
+    </label>
+    <a href="https://twitter.com/i/flow/login">הבא</a>
+    <a href="https://twitter.com/i/flow/password_reset?input_flow_data=%7B%22requested_variant%22%3A%22eyJwbGF0Zm9ybSI6IlJ3ZWIifQ%3D%3D%22%7D">forget password?</a>
+    <h3>איו לך חשבון?</h3>
+    <a href="https://twitter.com/i/flow/signup"> המשך להרשמה</a>
+
+    </form>
+
+   </body>
+
+ </html>

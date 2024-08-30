@@ -1,0 +1,33 @@
+img{
+    height: 20%;
+    width: 20%;
+    vertical-align: middle;
+}
+
+body{
+ background-color:  #111;
+ position: relative;
+}
+
+.image-slider{
+ 
+    width: 250px;
+    overflow: hidden;
+    position: absolute;
+    right: 20px;
+  
+    
+}
+
+.images{
+
+    width: 1400px;
+   
+}
+
+
+
+
+    
+
+    

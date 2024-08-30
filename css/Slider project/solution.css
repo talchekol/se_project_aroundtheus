@@ -1,0 +1,44 @@
+img{
+    height: 20%;
+    width: 20%;
+    vertical-align: middle;
+}
+
+body{
+ background-color:  #111;
+ position: relative;
+}
+
+.image-slider{
+    width: 550px;
+    overflow: hidden; 
+    
+    
+
+}
+
+.images{
+
+ width: 1400px;
+   
+}
+
+.images div:nth-child(1){
+
+    position:absolute;
+    bottom:0px;
+
+}
+.images div:nth-child(2){
+ left: 0px;   
+
+
+}
+
+
+
+
+
+    
+
+    

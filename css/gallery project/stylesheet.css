@@ -1,0 +1,39 @@
+h1{
+text-align: center;
+color:blue;
+background-color: red;
+
+}
+
+button {
+    margin-bottom: 50px;
+  font-size: 30px;
+  font-family: cursive;
+}
+
+body{
+    font-size: 30px;
+    text-align: center;
+    direction: rtl;
+
+}
+
+.wrapper {
+    
+  height: 700px;;
+  width: auto;
+   
+}
+
+.gallery {
+
+ column-count: auto;
+ text-align: center; 
+ display: inline block; 
+
+}
+
+html{
+
+ background-color: blue;   
+}

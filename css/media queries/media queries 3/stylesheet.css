@@ -1,0 +1,90 @@
+body {
+ 
+background-color: darkcyan;   
+    
+}
+
+@media (min-width:100px) { 
+
+    body {
+        display: block;
+        text-align: center;
+        padding: 30px;
+        margin: 20%;
+        
+
+        }
+ 
+.Name {
+    padding: 30px;
+ } 
+ 
+.email{
+    padding: 30px;
+
+
+ }
+ 
+.textarea{
+
+    padding: 30px;
+ }
+
+
+  
+          
+}
+
+
+
+
+@media(min-width:500px) {
+    body{
+        display: inline-block;
+        margin: 50px;
+        text-align: right;
+    }
+    .Name{
+        display: inline-block;
+        padding: 30px;
+        
+    }
+    .email{
+        display: inline-block;
+        padding: 30px;
+    }
+    .textarea{
+        display: inline-block;
+    }
+    
+}
+
+@media (min-width:1200px) {
+    body{
+        display: inline-block;
+        text-align: center;
+        padding: 20px;
+        margin: 10%;
+       
+    }
+    .Name{
+      display: inline-block; 
+      padding: 30px; 
+      
+    }
+    .email{
+        display: inline-block;
+        padding: 30px;
+        
+    }
+    .textarea{
+       display: block;
+        
+    }
+   
+
+    
+}
+
+   
+
