@@ -72,7 +72,7 @@ function getCardElement(cardData) {
   cardImageEl.src = cardData.link;
 
   //set the image alt text to the name field of the object
-  cardImageEl.textContent = cardData.name;
+  cardImageEl.alt = cardData.name;
   //return the ready HTML element with the filled-in data
   return cardElement;
 }
