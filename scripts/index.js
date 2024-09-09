@@ -34,9 +34,9 @@ const initialCards = [
  *                        elements
  --------------------------------------------------------------*/
 
-const profileEditBtb = document.querySelector("#profile-edit-btn");
-const modelProfileEditWindow = document.querySelector("#profile-edit-model");
-const modelCloseEdit = document.querySelector("#model-close-edit");
+const profileEditBtn = document.querySelector("#profile-edit-btn");
+const modelProfileEditWindow = document.querySelector("#profile-edit-modal");
+const modelCloseEdit = document.querySelector("#modal-close-edit");
 const profileTitleEdit = document.querySelector("#profile__title-js");
 const profileDescriptionEdit = document.querySelector(
   "#profile__description-js"
@@ -54,8 +54,8 @@ const cardListEl = document.querySelector(".cards__list");
 /*-----------------------------------------------------------*
  *                         functions
  ------------------------------------------------------------*/
-function closePopop() {
-  modelProfileEditWindow.classList.remove("model__opened");
+function closePopup() {
+  modelProfileEditWindow.classList.remove("modal_opened");
 }
 
 function getCardElement(cardData) {
@@ -84,21 +84,19 @@ function handleProfileEditsubmit(e) {
   e.preventDefault(e);
   profileTitleEdit.textContent = profileTitleInput.value;
   profileDescriptionEdit.textContent = profileDescriptionInput.value;
-  closePopop();
+  closePopup();
 }
 
 /*------------------------------------------------------------*
  *                        events listeners
  ------------------------------------------------------------*/
-profileEditBtb.addEventListener("click", () => {
+profileEditBtn.addEventListener("click", () => {
   profileTitleInput.value = profileTitleEdit.textContent.trim();
   profileDescriptionInput.value = profileDescriptionEdit.textContent.trim();
-  modelProfileEditWindow.classList.add("model__opened");
+  modelProfileEditWindow.classList.add("modal_opened");
 });
 
-modelCloseEdit.addEventListener("click", () => {
-  closePopop();
-});
+modelCloseEdit.addEventListener("click", closePopup);
 
 profileEditform.addEventListener("submit", handleProfileEditsubmit);
 
