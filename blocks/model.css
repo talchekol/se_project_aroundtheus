@@ -84,6 +84,7 @@
   font-family: Inter, "sans-serif";
   font-size: 14px;
   font-weight: 400;
+  line-height: 2.5;
 }
 
 ::placeholder {
@@ -109,7 +110,7 @@
     height: 26px;
     width: 26px;
     top: -43px;
-    left: 289px;
+    left: 258px;
   }
   .modal__heading {
     line-height: 22px;
