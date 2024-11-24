@@ -39,7 +39,11 @@
               Explorer
             </p>
           </div>
-          <button type="button" class="profile__add-button"></button>
+          <button
+            type="button"
+            class="profile__add-button"
+            id="profile__addcard-button"
+          ></button>
         </section>
 
         <section class="cards page__section">
@@ -50,7 +54,7 @@
         <p class="footer__signture">© 2024 Around The U.S.-Tal chekol</p>
       </footer>
     </div>
-
+    <!----  add edit model   ----->
     <div class="modal" id="profile-edit-modal">
       <div class="modal__container">
         <button class="modal__close" id="modal-close-edit"></button>
@@ -74,17 +78,56 @@
         </form>
       </div>
     </div>
+    <!----  add card model   ----->
+    <div class="modal" id="profile-addcard-modal">
+      <div class="modal__container">
+        <button class="modal__close" id="modal-close-card"></button>
+        <p class="modal__heading">New place</p>
+        <form class="modal__form" id="profile__card-form">
+          <input
+            class="modal__form-input"
+            name="title"
+            id="profile__addTitle-Input"
+            type="text"
+            placeholder="title"
+          />
+          <input
+            class="modal__form-input"
+            name="description"
+            id="profile__url-Input"
+            type="text"
+            placeholder="image url"
+          />
+          <button class="modal__button" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
 
+    <!----  add model image popup   ----->
+    <div class="modal" id="preview-modal">
+      <div class="modal__content">
+        <button
+          type="button"
+          class="modal__close modal__close-preview"
+        ></button>
+        <img src="" alt="" class="modal__image" />
+        <p class="modal__caption"></p>
+      </div>
+    </div>
+    <!----  card template    ----->
     <template id="card-template">
       <li class="card">
         <img src="" class="card__image" alt="" />
+        <button
+          class="card__button-delete card__button-delete-type"
+          type="button"
+        ></button>
         <div class="card__description">
           <h2 class="card__title"></h2>
           <button type="button" class="card__like-button"></button>
         </div>
       </li>
     </template>
-
     <script src="./scripts/index.js"></script>
   </body>
 </html>

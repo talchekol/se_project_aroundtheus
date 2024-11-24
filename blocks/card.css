@@ -12,6 +12,19 @@
   overflow: hidden;
 }
 
+.card__button-delete {
+  background: transparent url(../images/delete-button.svg) center no-repeat;
+  height: 19px;
+  width: 18px;
+  position: absolute;
+  border: none;
+}
+
+.card__button-delete:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 .card__description {
   display: flex;
   background-color: white;
@@ -29,6 +42,10 @@
   height: 18px;
   width: 21px;
   border: none;
+}
+
+.card__like-button-active {
+  background: url(../images/like-button-active.svg);
 }
 
 .card__like-button:hover {
