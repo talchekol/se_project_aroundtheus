@@ -118,7 +118,7 @@ function getCardElement(cardData) {
     //caption
     previewModalCaption.textContent = cardData.name;
     //alt
-    previewModal.alt = cardData.textContent;
+    previewModalImage.alt = cardData.textContent;
   });
 
   return cardElement;
@@ -127,19 +127,20 @@ function getCardElement(cardData) {
 /*------------------------------------------------------------*
 *                       events handlers
 ------------------------------------------------------------*/
-function handleProfileEditsubmit(e) {
+function handleProfileEditSubmit(e) {
   e.preventDefault(e);
   profileTitleEdit.textContent = profileTitleInput.value;
   profileDescriptionEdit.textContent = profileDescriptionInput.value;
   closePopup(modelProfileEditWindow);
 }
 
-function handleProfileAddsubmit(e) {
+function handleProfileAddSubmit(e) {
   e.preventDefault(e);
   const name = cardTitleInput.value;
   const link = cardUrlInput.value;
   rendercard({ name, link }, cardListEl);
   closePopup(addCardModal);
+  e.target.reset();
 }
 
 /*------------------------------------------------------------*
@@ -156,8 +157,8 @@ profileModalCloseButton.addEventListener("click", () =>
   closePopup(modelProfileEditWindow)
 );
 
-profileEditform.addEventListener("submit", handleProfileEditsubmit);
-addCardFormElement.addEventListener("submit", handleProfileAddsubmit);
+profileEditform.addEventListener("submit", handleProfileEditSubmit);
+addCardFormElement.addEventListener("submit", handleProfileAddSubmit);
 
 initialCards.forEach((cardData) => rendercard(cardData, cardListEl));
 

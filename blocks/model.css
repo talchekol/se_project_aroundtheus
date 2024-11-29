@@ -157,6 +157,10 @@
     max-width: 238px;
   }
 
+  .modal__button {
+    font-size: 14px;
+  }
+
   .modal__close-preview {
     background-image: url(../images/Close\ Icon-320.svg);
     top: -23px;
