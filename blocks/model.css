@@ -167,3 +167,14 @@
     left: revert-layer;
   }
 }
+
+.modal__error {
+  display: block;
+  color: red;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.modal__button_disabled {
+  background-color: gray;
+}

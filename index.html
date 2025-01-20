@@ -59,22 +59,44 @@
       <div class="modal__container">
         <button class="modal__close" id="modal-close-edit"></button>
         <p class="modal__heading">Edit profile</p>
-        <form class="modal__form" id="profile__edit-form">
+        <form class="modal__form" id="profile__edit-form" novalidate>
           <input
-            class="modal__form-input"
+            class="modal__form-input modal__input_type_error"
             name="title"
             id="profile__Title-Input"
             type="text"
             placeholder="Jacques cousteau"
+            minlength="2"
+            maxlength="40"
+            required
           />
+          <span
+            class="modal__error modal__error_visible"
+            id="profile__Title-Input-Error"
+            >please fill out this field</span
+          >
           <input
-            class="modal__form-input"
+            class="modal__form-input modal__input_type_error"
             name="description"
             id="profile__Description-Input"
             type="text"
             placeholder="Explorer"
+            minlength="2"
+            maxlength="200"
+            required
           />
-          <button class="modal__button" type="submit">Save</button>
+          <span
+            class="modal__error modal__error_visible"
+            id="profile__Description-Input-Error"
+            >please fill out this field</span
+          >
+          <button
+            class="modal__button modal__button_disabled"
+            type="submit"
+            disabled
+          >
+            Save
+          </button>
         </form>
       </div>
     </div>
@@ -83,22 +105,43 @@
       <div class="modal__container">
         <button class="modal__close" id="modal-close-card"></button>
         <p class="modal__heading">New place</p>
-        <form class="modal__form" id="profile__card-form">
+        <form class="modal__form" id="profile__card-form" novalidate>
           <input
             class="modal__form-input"
             name="title"
             id="profile__addTitle-Input"
             type="text"
             placeholder="title"
+            minlength="1"
+            maxlength="30"
+            required
           />
+          <span
+            class="modal__error modal__error_visible"
+            id="profile__addTitle-Input-Error"
+            >please fill out this field</span
+          >
           <input
             class="modal__form-input"
             name="description"
             id="profile__url-Input"
-            type="text"
+            type="url"
             placeholder="image url"
+            required
           />
-          <button class="modal__button" type="submit">Save</button>
+          <span
+            class="modal__error modal__error_visible"
+            id="profile__url-Input-Error"
+            >please Enter a URL
+          </span>
+
+          <button
+            class="modal__button modal__button_disabled"
+            type="submit"
+            disabled
+          >
+            Save
+          </button>
         </form>
       </div>
     </div>
@@ -129,5 +172,6 @@
       </li>
     </template>
     <script src="./scripts/index.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>

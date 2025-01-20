@@ -68,12 +68,32 @@ const previewModalCloseBtn = previewModal.querySelector(
 /*-----------------------------------------------------------*
 *                         functions
 ------------------------------------------------------------*/
+
 function closePopup(modal) {
   modal.classList.remove("modal_opened");
+  document.removeEventListener("keydown", closeModalEsc);
+  modal.removeEventListener("mousedown", closeModalOverlay);
 }
 
 function openPopup(modal) {
   modal.classList.add("modal_opened");
+  document.addEventListener("keydown", closeModalEsc);
+  modal.addEventListener("mousedown", closeModalOverlay);
+}
+
+function closeModalOverlay(e) {
+  if (e.target.classList.contains("modal")) {
+    closePopup(e.target);
+  }
+}
+
+function closeModalEsc(evt) {
+  if (evt.key === "Escape") {
+    const modalOpened = document.querySelector(".modal_opened");
+    if (modalOpened) {
+      closePopup(modalOpened);
+    }
+  }
 }
 
 function rendercard(cardData, warpper) {
