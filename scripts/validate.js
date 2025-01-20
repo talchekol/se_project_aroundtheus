@@ -45,8 +45,10 @@ function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
 }
 function setEventListenrs(formEl, options) {
   const { inputSelector } = options;
+  const { submitButtonSelector } = options;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
-  const submitButton = formEl.querySelector(".modal__button");
+  // const submitButton = formEl.querySelector(".modal__button");
+  const submitButton = formEl.querySelector(submitButtonSelector);
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (e) => {
       checkInputValidity(formEl, inputEl, options);
@@ -71,7 +73,7 @@ const config = {
   inputSelector: ".modal__form-input",
   submitButtonSelector: ".modal__button",
   inactiveButtonClass: "modal__button_disabled",
-  inputErrorClass: ".modal__input_type_error",
+  inputErrorClass: "modal__form-input_type_error",
   errorClass: "modal__error_visible",
 };
 
