@@ -1,3 +1,6 @@
+import FormValidator from "./FormValidator.js";
+import Card from "./Card.js";
+
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -81,6 +84,7 @@ function openPopup(modal) {
   modal.addEventListener("mousedown", closeModalOverlay);
 }
 
+/*
 function closeModalOverlay(e) {
   if (e.target.classList.contains("modal")) {
     closePopup(e.target);
@@ -97,10 +101,10 @@ function closeModalEsc(evt) {
 }
 
 function rendercard(cardData, warpper) {
-  const cardElement = getCardElement(cardData);
+  const cardElement = getCardElement(Data);
   warpper.prepend(cardElement);
 }
-
+/*
 function getCardElement(cardData) {
   //clone the template element with all its content and store it in a cardElement variable
   const cardElement = cardTemplate.cloneNode(true);
@@ -180,7 +184,8 @@ profileModalCloseButton.addEventListener("click", () =>
 profileEditform.addEventListener("submit", handleProfileEditSubmit);
 addCardFormElement.addEventListener("submit", handleProfileAddSubmit);
 
-initialCards.forEach((cardData) => rendercard(cardData, cardListEl));
+//DOING THIS IN THE NEW CARD
+//initialCards.forEach((cardData) => rendercard(cardData, cardListEl));
 
 addNewCardButton.addEventListener("click", () => openPopup(addCardModal));
 addCardeModalCloseButton.addEventListener("click", () =>
@@ -189,4 +194,30 @@ addCardeModalCloseButton.addEventListener("click", () =>
 
 previewModalCloseBtn.addEventListener("click", () => {
   closePopup(previewModal);
+});
+
+// validation
+
+const addFormEl = addCardModal.querySelector(".modal__form");
+const editFormEl = modelProfileEditWindow.querySelector(".modal__form");
+
+const FormValidatorConfig = {
+  formSelector: ".modal__form",
+  inputSelector: ".modal__form-input",
+  submitButtonSelector: ".modal__button",
+  inactiveButtonClass: "modal__button_disabled",
+  inputErrorClass: "modal__form-input_type_error",
+  errorClass: "modal__error_visible",
+};
+
+const addFormValidator = new FormValidator(FormValidatorConfig, addFormEl);
+addFormValidator.enableValidation();
+
+const editFormValidator = new FormValidator(FormValidatorConfig, editFormEl);
+addFormValidator.enableValidation();
+
+//card
+initialCards.forEach((cardData) => {
+  const card = new Card(cardData, "#card-template");
+  cardListEl.append(card.getView());
 });

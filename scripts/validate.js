@@ -1,3 +1,4 @@
+/*
 // enabling validation by calling enableValidation()
 // pass all the settings on call
 
@@ -78,3 +79,4 @@ const config = {
 };
 
 enableValidation(config);
+*/
