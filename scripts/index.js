@@ -84,7 +84,6 @@ function openPopup(modal) {
   modal.addEventListener("mousedown", closeModalOverlay);
 }
 
-/*
 function closeModalOverlay(e) {
   if (e.target.classList.contains("modal")) {
     closePopup(e.target);
@@ -101,10 +100,10 @@ function closeModalEsc(evt) {
 }
 
 function rendercard(cardData, warpper) {
-  const cardElement = getCardElement(Data);
+  const cardElement = getCardElement(cardData);
   warpper.prepend(cardElement);
 }
-/*
+
 function getCardElement(cardData) {
   //clone the template element with all its content and store it in a cardElement variable
   const cardElement = cardTemplate.cloneNode(true);
@@ -142,7 +141,7 @@ function getCardElement(cardData) {
     //caption
     previewModalCaption.textContent = cardData.name;
     //alt
-    previewModalImage.alt = cardData.textContent;
+    previewModalImage.alt = cardData.name;
   });
 
   return cardElement;
@@ -214,7 +213,7 @@ const addFormValidator = new FormValidator(FormValidatorConfig, addFormEl);
 addFormValidator.enableValidation();
 
 const editFormValidator = new FormValidator(FormValidatorConfig, editFormEl);
-addFormValidator.enableValidation();
+editFormValidator.enableValidation();
 
 //card
 initialCards.forEach((cardData) => {
