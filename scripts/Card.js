@@ -1,43 +1,9 @@
-const previewModal = document.querySelector("#preview-modal");
-const previewModalImage = previewModal.querySelector(".modal__image");
-const previewModalCaption = previewModal.querySelector(".modal__caption");
-const previewModalCloseBtn = previewModal.querySelector(
-  ".modal__close-preview"
-);
-
-function closePopup(modal) {
-  modal.classList.remove("modal_opened");
-  document.removeEventListener("keydown", closeModalEsc);
-  modal.removeEventListener("mousedown", closeModalOverlay);
-}
-
-function openPopup(modal) {
-  modal.classList.add("modal_opened");
-  document.addEventListener("keydown", closeModalEsc);
-  modal.addEventListener("mousedown", closeModalOverlay);
-}
-
-function closeModalOverlay(e) {
-  if (e.target.classList.contains("modal")) {
-    closePopup(e.target);
-  }
-}
-
-function closeModalEsc(evt) {
-  if (evt.key === "Escape") {
-    const modalOpened = document.querySelector(".modal_opened");
-    if (modalOpened) {
-      closePopup(modalOpened);
-    }
-  }
-}
-
 class Card {
-  constructor(data, cardSelector) {
+  constructor(data, cardSelector, handleImageClick) {
     this._name = data.name;
     this._link = data.link;
-
     this._cardSelector = cardSelector;
+    this._handleImageClick = handleImageClick;
   }
 
   _getTemplate() {
@@ -50,17 +16,13 @@ class Card {
   }
 
   _setEventListeners() {
-    this._element
-      .querySelector(".card__button-delete")
-      .addEventListener("click", () => this._handleDeleteCard());
+    this._deleteButton.addEventListener("click", () =>
+      this._handleDeleteCard()
+    );
 
-    this._element
-      .querySelector(".card__like-button")
-      .addEventListener("click", () => this._handleLikeIcon());
+    this._likeButton.addEventListener("click", () => this._handleLikeIcon());
 
-    this._element
-      .querySelector(".card__image")
-      .addEventListener("click", () => this._handlePreviewCard());
+    this._cardImage.addEventListener("click", () => this._handlePreviewClick());
   }
 
   _handleDeleteCard() {
@@ -69,23 +31,27 @@ class Card {
   }
 
   _handleLikeIcon() {
-    this._element
-      .querySelector(".card__like-button")
-      .classList.toggle("card__like-button-active");
+    this._likeButton.classList.toggle("card__like-button-active");
   }
 
-  _handlePreviewCard() {
-    previewModalImage.src = this._link;
-    previewModalCaption.textContent = this._name;
-    previewModalImage.alt = this._name;
-    openPopup(previewModal);
+  _handlePreviewClick() {
+    this._handleImageClick(this._name, this._link);
   }
 
   getView() {
     this._element = this._getTemplate();
+
+    this._cardImage = this._element.querySelector(".card__image");
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
+
+    this._cardTitle = this._element.querySelector(".card__title");
+    this._cardTitle.textContent = this._name;
+
+    this._likeButton = this._element.querySelector(".card__like-button");
+    this._deleteButton = this._element.querySelector(".card__button-delete");
+
     this._setEventListeners();
-    this._element.querySelector(".card__image").src = this._link;
-    this._element.querySelector(".card__title").textContent = this._name;
 
     return this._element;
   }

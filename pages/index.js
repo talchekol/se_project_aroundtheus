@@ -1,5 +1,5 @@
-import FormValidator from "./FormValidator.js";
-import Card from "./Card.js";
+import FormValidator from "../scripts/FormValidator.js";
+import Card from "../scripts/Card.js";
 
 const initialCards = [
   {
@@ -103,7 +103,7 @@ function rendercard(cardData, warpper) {
   const cardElement = getCardElement(cardData);
   warpper.prepend(cardElement);
 }
-
+/*
 function getCardElement(cardData) {
   //clone the template element with all its content and store it in a cardElement variable
   const cardElement = cardTemplate.cloneNode(true);
@@ -197,9 +197,6 @@ previewModalCloseBtn.addEventListener("click", () => {
 
 // validation
 
-const addFormEl = addCardModal.querySelector(".modal__form");
-const editFormEl = modelProfileEditWindow.querySelector(".modal__form");
-
 const FormValidatorConfig = {
   formSelector: ".modal__form",
   inputSelector: ".modal__form-input",
@@ -209,14 +206,32 @@ const FormValidatorConfig = {
   errorClass: "modal__error_visible",
 };
 
-const addFormValidator = new FormValidator(FormValidatorConfig, addFormEl);
+const addFormValidator = new FormValidator(
+  FormValidatorConfig,
+  addCardFormElement
+);
 addFormValidator.enableValidation();
 
-const editFormValidator = new FormValidator(FormValidatorConfig, editFormEl);
+const editFormValidator = new FormValidator(
+  FormValidatorConfig,
+  profileEditform
+);
 editFormValidator.enableValidation();
 
 //card
+function getCardElement(cardData) {
+  const card = new Card(cardData, "#card-template", openImagePreview);
+  return card.getView();
+}
+
 initialCards.forEach((cardData) => {
-  const card = new Card(cardData, "#card-template");
-  cardListEl.append(card.getView());
+  const card = getCardElement(cardData);
+  cardListEl.append(card);
 });
+
+function openImagePreview(name, link) {
+  openPopup(previewModal);
+  previewModalImage.src = link;
+  previewModalCaption.textContent = name;
+  previewModalImage.alt = name;
+}
