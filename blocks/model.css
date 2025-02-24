@@ -24,6 +24,8 @@
   max-height: 330px;
   padding: 36px;
   position: relative;
+  min-height: 330px;
+  overflow: hidden;
 }
 
 .modal__form {
@@ -130,17 +132,52 @@
   animation: opacity 0.5s linear;
 }
 
+.modal__error {
+  display: block;
+  color: red;
+  font-size: 12px;
+  line-height: 15px;
+  min-height: 15px;
+  visibility: hidden;
+}
+
+.modal__error_visible {
+  visibility: visible;
+}
+
+.modal__form-input {
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  font-family: "Inter", "sans-serif";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 2.5;
+  min-height: 40px;
+}
+
+.modal__button {
+  height: 50px;
+  border-radius: 2px;
+  background-color: #000;
+  color: #fff;
+  margin-top: 10px;
+}
+
 @media screen and (max-width: 320px) {
   .modal__container {
     width: 282px;
     max-height: 322px;
     padding: 25px;
     margin: 123px 19px;
+    position: relative;
+    top: 61px;
   }
+
   .modal__heading {
     max-width: 238px;
     padding-bottom: 75px;
   }
+
   .modal__close {
     background: url(../images/Close\ Icon-320.svg);
     border: none;
