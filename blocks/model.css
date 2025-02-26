@@ -25,7 +25,7 @@
   padding: 36px;
   position: relative;
   min-height: 330px;
-  overflow: hidden;
+  /* overflow: hidden;*/
 }
 
 .modal__form {
@@ -48,18 +48,19 @@
 }
 
 .modal__close {
-  background: url(../images/Close\ Icon.svg);
-  border: none;
-  background-repeat: no-repeat;
+  background: url(../images/Close-Icon.svg);
+  position: absolute;
   width: 40px;
   height: 40px;
-  position: absolute;
+  border: none;
+  background-repeat: no-repeat;
   /*
-  top: -40px;
-  right: -40px;
-  */
   bottom: calc(100% + 5px);
   left: calc(100% + 5px);
+  */
+
+  top: -40px;
+  right: -40px;
 }
 
 .modal_opened {
@@ -107,7 +108,7 @@
 .modal__close-preview {
   top: -34px;
   right: -32px;
-  background-image: url(../images/Close\ Icon.svg);
+  background: url(../images/Close-Icon.svg) no-repeat;
   opacity: 1;
 }
 
@@ -179,7 +180,7 @@
   }
 
   .modal__close {
-    background: url(../images/Close\ Icon-320.svg);
+    background: url(/images/Close\ Icon-320.svg);
     border: none;
     background-repeat: no-repeat;
     width: 26px;
@@ -199,7 +200,7 @@
   }
 
   .modal__close-preview {
-    background-image: url(../images/Close\ Icon-320.svg);
+    background-image: url(/images/Close\ Icon-320.svg);
     top: -23px;
     left: revert-layer;
   }

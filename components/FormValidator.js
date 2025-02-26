@@ -78,6 +78,5 @@ const FormValidatorConfig = {
 };
 
 const formElement = document.querySelector(FormValidatorConfig.formSelector);
-const addFormValidator = new FormValidator(FormValidatorConfig, formElement);
-addFormValidator.enableValidation();
+
 export default FormValidator;
