@@ -180,7 +180,7 @@
   }
 
   .modal__close {
-    background: url(/images/Close\ Icon-320.svg);
+    background: url(../images/Close-Icon-320.svg);
     border: none;
     background-repeat: no-repeat;
     width: 26px;
@@ -200,7 +200,7 @@
   }
 
   .modal__close-preview {
-    background-image: url(/images/Close\ Icon-320.svg);
+    background-image: url(../images/Close-Icon-320.svg);
     top: -23px;
     left: revert-layer;
   }
