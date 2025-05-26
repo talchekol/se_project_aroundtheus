@@ -73,6 +73,8 @@ const previewModalCaption = previewModal.querySelector(".modal__caption");
 const previewModalCloseBtn = previewModal.querySelector(
   ".modal__close-preview"
 );
+const inputName = document.querySelector("#profile__Title-Input");
+const inputDescription = document.querySelector("#profile__Description-Input");
 
 /*-----------------------------------------------------------*
 *                         class
@@ -245,12 +247,11 @@ const userInfo = new UserInfo({
 
 profileEditBtn.addEventListener("click", () => {
   const { name, job } = userInfo.getUserInfo();
-  profileTitleEdit.value = name;
-  profileDescriptionEdit.value = job;
+  inputName.value = name;
+  inputDescription.value = job;
   popupFormEdit.open();
+  popupFormEdit.setEventListeners();
 });
-
-popupFormEdit.setEventListeners();
 
 // popup with image
 const imagePopup = new PopupWithImage("#preview-modal");

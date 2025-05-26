@@ -1,10 +1,10 @@
 class Popup {
   constructor({ popupSelector }) {
     this._popupElement = document.querySelector(popupSelector);
-    this._popupAddBtn = this._popupElement.querySelector(
-      ".profile__add-button"
-    );
-    this._popupEditBtn = this._popupElement.querySelector("#profile-edit-btn");
+    // this._popupAddBtn = this._popupElement.querySelector(
+    //   ".profile__add-button"
+    // );
+    // this._popupEditBtn = this._popupElement.querySelector("#profile-edit-btn");
     this._handleEscClose = this._handleEscClose.bind(this);
   }
 
