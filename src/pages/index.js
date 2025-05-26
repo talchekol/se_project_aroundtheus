@@ -1,11 +1,11 @@
 import FormValidator from "../components/FormValidator.js";
 import Card from "../components/Card.js";
 import "./index.css";
-import Popup from "../components/popup.js";
-import Section from "../components/section.js";
-import popupWithImage from "../components/popup-with-image.js";
-import PopupWithForm from "../components/popup-with-form.js";
-import UserInfo from "../components/user-info.js";
+import Popup from "../components/Popup.js";
+import Section from "../components/Section.js";
+import PopupWithImage from "../components/PopupWithImage.js";
+import PopupWithForm from "../components/PopupWithForm.js";
+import UserInfo from "../components/UserInfo.js";
 
 const initialCards = [
   {
@@ -162,7 +162,7 @@ previewModalCloseBtn.addEventListener("click", () => {
 
 // validation
 
-const FormValidatorConfig = {
+const formValidatorConfig = {
   formSelector: ".modal__form",
   inputSelector: ".modal__form-input",
   submitButtonSelector: ".modal__button",
@@ -172,20 +172,20 @@ const FormValidatorConfig = {
 };
 
 const addFormValidator = new FormValidator(
-  FormValidatorConfig,
+  formValidatorConfig,
   addCardFormElement
 );
 addFormValidator.enableValidation();
 
 const editFormValidator = new FormValidator(
-  FormValidatorConfig,
+  formValidatorConfig,
   profileEditform
 );
 editFormValidator.enableValidation();
 
-function rendercard(cardData, warpper) {
-  const cardElement = getCardElement(cardData);
-  warpper.prepend(cardElement);
+function rendercard(item, sectionIntance) {
+  const card = getCardElement(item);
+  sectionIntance.addItem(card);
 }
 
 function getCardElement(data) {
@@ -203,11 +203,7 @@ function openImagePreview(name, link) {
 
 const section = new Section({
   items: initialCards,
-  renderer: (item) => {
-    const card = getCardElement(item);
-    section.addItem(card);
-  },
-
+  renderer: (item) => rendercard(item, section),
   containerSelector: ".cards__list",
 });
 
@@ -222,7 +218,7 @@ const popupFormAdd = new PopupWithForm({
       name: data.title,
       link: data.description,
     };
-    rendercard(cardDataPopup, cardListEl);
+    rendercard(cardDataPopup, section);
     popupFormAdd.close();
   },
 });
@@ -257,7 +253,5 @@ profileEditBtn.addEventListener("click", () => {
 popupFormEdit.setEventListeners();
 
 // popup with image
-const imagePopup = new popupWithImage("#preview-modal");
+const imagePopup = new PopupWithImage("#preview-modal");
 imagePopup.setEventListeners();
-
-profileModalCloseButton.addEventListener("click", () => popupFormEdit.close());

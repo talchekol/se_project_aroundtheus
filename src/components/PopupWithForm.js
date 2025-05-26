@@ -1,4 +1,4 @@
-import popup from "../components/popup.js";
+import popup from "./Popup.js";
 
 class PopupWithForm extends popup {
   constructor({ popupSelector, handleFormSubmit }) {
@@ -22,12 +22,9 @@ class PopupWithForm extends popup {
       evt.preventDefault();
       const inputValues = this._getInputValues();
       this._handleFormSubmit(inputValues);
+      super.close();
+      this._form.reset();
     });
-  }
-
-  close() {
-    super.close();
-    this._form.reset();
   }
 }
 

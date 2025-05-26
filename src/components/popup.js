@@ -1,7 +1,6 @@
 class Popup {
   constructor({ popupSelector }) {
     this._popupElement = document.querySelector(popupSelector);
-    this._popupCloseBtn = this._popupElement.querySelector(".modal__close");
     this._popupAddBtn = this._popupElement.querySelector(
       ".profile__add-button"
     );
@@ -27,15 +26,11 @@ class Popup {
   }
 
   setEventListeners() {
-    // this._popupCloseBtn.addEventListener("click", () => {
-    //   this.close();
-    // });
     this._popupElement.addEventListener("mousedown", (evt) => {
       if (
         evt.target.classList.contains("modal") ||
         evt.target.classList.contains("modal__close")
       ) {
-        console.log("mouse press");
         this.close();
       }
     });
