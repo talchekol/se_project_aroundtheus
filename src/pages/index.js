@@ -66,7 +66,7 @@ const editFormValidator = new FormValidator(
 editFormValidator.enableValidation();
 
 const avatarFormValidator = new FormValidator(formValidatorConfig, avatarForm);
-editFormValidator.enableValidation();
+avatarFormValidator.enableValidation();
 
 //cards
 function renderCard(item, sectionIntance) {
@@ -230,10 +230,17 @@ const popupAvatarForm = new PopupWithForm({
   popupSelector: "#profile-avatar-modal",
   handleFormSubmit: (formData) => {
     popupAvatarForm.renderLoading(true);
-    return api.updateAvatar({ avatar: formData.avatar }).then((user) => {
-      profileImage.src = user.avatar;
-      // popupAvatarForm.close();
-    });
+    return api
+      .updateAvatar({ avatar: formData.avatar })
+      .then((updatedUserData) => {
+        userInfo.setUserInfo({
+          name: updatedUserData.name,
+          job: updatedUserData.about,
+          avatar: updatedUserData.avatar,
+          id: updatedUserData._id,
+        });
+      })
+      .catch((err) => console.error("Error updating avatar:", err));
   },
 });
 
