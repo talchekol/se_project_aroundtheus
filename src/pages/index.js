@@ -53,7 +53,6 @@ const avatarInput = document.querySelector("#avatar-link-input");
 const profileImage = document.querySelector(".profile__image");
 const avatarModal = document.querySelector("#profile-avatar-modal");
 const avatarEditBtn = document.querySelector("#avatar-edit-btn");
-
 const addFormValidator = new FormValidator(
   formValidatorConfig,
   addCardFormElement
@@ -64,6 +63,9 @@ const editFormValidator = new FormValidator(
   formValidatorConfig,
   profileEditform
 );
+editFormValidator.enableValidation();
+
+const avatarFormValidator = new FormValidator(formValidatorConfig, avatarForm);
 editFormValidator.enableValidation();
 
 //cards
@@ -139,36 +141,28 @@ section.renderItems();
 const popupFormAdd = new PopupWithForm({
   popupSelector: "#profile-addcard-modal",
   handleFormSubmit: (data) => {
-    popupFormAdd.renderLoading(true);
+    // popupFormAdd.renderLoading(true);
     const cardDataPopup = {
       name: data.title,
       link: data.description,
     };
-
-    api
-      .addNewCard(cardDataPopup)
-      .then((newCard) => {
-        renderCard(newCard, section);
-        popupFormAdd.close();
-      })
-      .catch((err) => {
-        console.error("Error adding card:", err);
-      })
-      .finally(() => {
-        popupFormAdd.renderLoading(false);
-      });
+    return api.addNewCard(cardDataPopup).then((newCard) => {
+      renderCard(newCard, section);
+      // popupFormAdd.close();
+    });
   },
 });
 
-addNewCardButton.addEventListener("click", () => popupFormAdd.open());
 popupFormAdd.setEventListeners();
+
+addNewCardButton.addEventListener("click", () => popupFormAdd.open());
+// popupFormAdd.setEventListeners();
 
 //popup Edit
 const popupFormEdit = new PopupWithForm({
   popupSelector: "#profile-edit-modal",
   handleFormSubmit: (formData) => {
-    popupFormEdit.renderLoading(true);
-    api
+    return api
       .editingProfileInfo({
         name: formData.title,
         about: formData.description,
@@ -179,16 +173,11 @@ const popupFormEdit = new PopupWithForm({
           job: updatedUserData.about,
           id: updatedUserData.id,
         });
-        // popupFormEdit.close();
-      })
-      .catch((err) => {
-        console.error("Error updating profile:", err);
-      })
-      .finally(() => {
-        popupFormEdit.renderLoading(false);
       });
   },
 });
+
+popupFormEdit.setEventListeners();
 
 const userInfo = new UserInfo({
   nameSelector: "#profile__title-js",
@@ -241,16 +230,10 @@ const popupAvatarForm = new PopupWithForm({
   popupSelector: "#profile-avatar-modal",
   handleFormSubmit: (formData) => {
     popupAvatarForm.renderLoading(true);
-    return api
-      .updateAvatar({ avatar: formData.avatar })
-      .then((user) => {
-        profileImage.src = user.avatar;
-        popupAvatarForm.close();
-      })
-      .catch((err) => console.error("Error updating avatar:", err))
-      .finally(() => {
-        popupAvatarForm.renderLoading(false);
-      });
+    return api.updateAvatar({ avatar: formData.avatar }).then((user) => {
+      profileImage.src = user.avatar;
+      // popupAvatarForm.close();
+    });
   },
 });
 
