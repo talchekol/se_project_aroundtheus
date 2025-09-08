@@ -28,6 +28,14 @@
   /* overflow: hidden;*/
 }
 
+.model__delete {
+  min-height: 150px;
+}
+
+.model_edit-avater {
+  min-height: 200px;
+}
+
 .modal__form {
   display: flex;
   flex-direction: column;

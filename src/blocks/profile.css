@@ -12,6 +12,11 @@
   grid-template-columns: minmax(auto, 373px) auto;
 }
 
+.profile__avatar-container {
+  position: relative;
+  display: inline-block;
+}
+
 .profile__image {
   border-radius: 50%;
   height: 120px;
@@ -19,6 +24,27 @@
   object-fit: cover;
   background-position: center;
   margin-right: 26px;
+}
+
+.profile_image-edit-btn {
+  width: 26px;
+  height: 26px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6) url(../images/editProfileHover.svg) center
+    no-repeat;
+  background-size: 24px 24px;
+  border: none;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.profile__avatar-container:hover .profile_image-edit-btn {
+  opacity: 1;
 }
 
 .profile__title {
