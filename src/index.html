@@ -19,11 +19,17 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <img
-            src="<%=require('./images/jacques-cousteau.jpg')%>"
-            alt="avatar"
-            class="profile__image"
-          />
+          <div class="profile__avatar-container">
+            <img
+              src="<%=require('./images/jacques-cousteau.jpg')%>"
+              alt="avatar"
+              class="profile__image"
+            />
+            <button
+              class="profile_image-edit-btn"
+              id="avatar-edit-btn"
+            ></button>
+          </div>
           <div class="profile__info">
             <h1 class="profile__title" id="profile__title-js">
               Jacques cousteau
@@ -151,6 +157,40 @@
         <p class="modal__caption"></p>
       </div>
     </div>
+    <!----  model delete popup   ----->
+    <div class="modal" id="confirm-delete-modal">
+      <div class="modal__container model__delete">
+        <button class="modal__close" type="button"></button>
+        <form class="modal__form" id="confirm-delete-form" novalidate>
+          <h2 class="modal__heading">Are you sure?</h2>
+          <button type="submit" class="modal__button">Yes</button>
+        </form>
+      </div>
+    </div>
+
+    <!----  model change profile image -------->
+    <div class="modal" id="profile-avatar-modal">
+      <div class="modal__container model_edit-avater">
+        <button class="modal__close" type="button"></button>
+        <p class="modal__heading">Change profile picture</p>
+        <form class="modal__form" id="avatar-img-form" novalidate>
+          <input
+            class="modal__form-input"
+            name="avatar"
+            id="avatar-link-input"
+            type="url"
+            placeholder="image url"
+            required
+          />
+          <span
+            class="modal__error modal__error_visible"
+            id="avatar-link-input-Error"
+          ></span>
+          <button type="submit" class="modal__button">save</button>
+        </form>
+      </div>
+    </div>
+
     <!----  card template    ----->
     <template id="card-template">
       <li class="card">

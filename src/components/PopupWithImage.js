@@ -1,4 +1,4 @@
-import Popup from "./popup";
+import Popup from "./Popup.js";
 
 class PopupWithImage extends Popup {
   constructor(popupSelector) {
